@@ -21,7 +21,16 @@
                         then-layer = <3>;        
                 };    
         };
-        
+
+        behaviors {
+            td0: tap_dance_0 {
+                compatible = "zmk,behavior-tap-dance";
+                #binding-cells = <0>;
+                tapping-term-ms = <200>;
+                bindings = <&kp LCTRL>, <&kp CAPSLOCK>;
+            };
+        };
+
         keymap {
                 compatible = "zmk,keymap";
 
@@ -33,7 +42,7 @@
 //                    | GUI |LEFT |SPACE|   |SPACE|RIGHT|RALT |
                         bindings = <
    &kp TAB   &kp Q   &kp W   &kp E   &kp R  &kp T      &kp Y     &kp U  &kp I      &kp O    &kp P     &kp BSPC
-   &kp LCTRL &kp A   &kp S   &kp D   &kp F  &kp G      &kp H     &kp J  &kp K      &kp L    &kp SEMI  &kp SQT
+   &kp td0 &kp A   &kp S   &kp D   &kp F  &kp G      &kp H     &kp J  &kp K      &kp L    &kp SEMI  &kp SQT
    &kp LSHFT &kp Z   &kp X   &kp C   &kp V  &kp B      &kp N     &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp RET
                              &kp LGUI &mo 1  &kp SPACE  &kp SPACE &mo 2  &kp RALT
                         >;
